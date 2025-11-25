@@ -78,7 +78,10 @@
       --bg-image: url('https://www.northernlogsupply.com/wp-content/uploads/2024/07/log-cabin-exterior-ideas.jpg');
       --accent: #f3a712;
       --text: #ffffff;
-      --overlay: rgba(12,12,12,0.55);
+
+      /* SMANJEN OVERLAY da se slika više vidi (0.55 → 0.25) */
+      --overlay: rgba(12,12,12,0.25);
+
       --radius: 12px;
       --max-width: 1100px;
 
@@ -95,10 +98,13 @@
     .brvnara-inner {
       width: 100%;
       max-width: var(--max-width);
-      background: rgba(255,255,255,0.03);
+      background: rgba(255,255,255,0.05);
+
+      /* SMANJEN BLUR (4px → 2px) */
+      backdrop-filter: blur(2px);
+
       border-radius: var(--radius);
       padding: 28px;
-      backdrop-filter: blur(4px);
       box-shadow: 0 8px 30px rgba(0,0,0,0.45);
       display: grid;
       grid-template-columns: 1fr 360px;
@@ -208,7 +214,7 @@
         <li class="brvnara-item"><span class="dot"></span>stolarija</li>
         <li class="brvnara-item"><span class="dot"></span>patosi</li>
         <li class="brvnara-item"><span class="dot"></span>zastita drveta</li>
-        <li class="brvnara-item"><span class="dot"></span>izolacija u krovu (staklena vuna i paropropustna folija)</li>
+        <li class="brvnara-item"><span class="dot"></span>izolacija u krovu (staklena vuna i paropropusna folija)</li>
         <li class="brvnara-item"><span class="dot"></span>izolacija u podu</li>
       </ul>
     </div>
@@ -217,7 +223,11 @@
       <h3>Zainteresovan/a?</h3>
       <p>Kontaktirajte nas odmah i dogovorite besplatnu procenu. Radimo brzo, kvalitetno i sa garancijom.</p>
 
-      <a class="brvnara-btn" href="mailto:kontakt@example.com">Pošaljite poruku</a>
+      <!-- WHATSAPP UMESTO EMAILA -->
+      <a class="brvnara-btn" href="https://wa.me/38162406649" target="_blank">
+        Pošaljite poruku
+      </a>
+
       <a class="small-ghost" href="#kontakt">Kontakt forma</a>
     </div>
   </div>
