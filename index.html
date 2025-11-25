@@ -69,7 +69,160 @@
 
   <p>Naša misija je da svaka brvnara bude <strong>sigurna, lepa i dugovečna</strong>, a vi možete uživati u svom kutku prirode bez brige.</p>
 </section>
+<!-- ==== POČETAK: Brvnara sekcija ==== -->
+<section class="brvnara-offer" aria-labelledby="brvnara-title">
+  <style>
+    .brvnara-offer * { box-sizing: border-box; }
 
+    .brvnara-offer {
+      --bg-image: url('https://www.northernlogsupply.com/wp-content/uploads/2024/07/log-cabin-exterior-ideas.jpg');
+      --accent: #f3a712;
+      --text: #ffffff;
+      --overlay: rgba(12,12,12,0.55);
+      --radius: 12px;
+      --max-width: 1100px;
+
+      padding: 48px 16px;
+      display: flex;
+      justify-content: center;
+      background-image: linear-gradient(var(--overlay), var(--overlay)), var(--bg-image);
+      background-size: cover;
+      background-position: center;
+      color: var(--text);
+      font-family: system-ui, Arial, sans-serif;
+    }
+
+    .brvnara-inner {
+      width: 100%;
+      max-width: var(--max-width);
+      background: rgba(255,255,255,0.03);
+      border-radius: var(--radius);
+      padding: 28px;
+      backdrop-filter: blur(4px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.45);
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 22px;
+    }
+
+    @media (max-width: 880px) {
+      .brvnara-inner { grid-template-columns: 1fr; }
+    }
+
+    .brvnara-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    .brvnara-list {
+      list-style: none;
+      margin: 14px 0 0;
+      padding: 0;
+      display: grid;
+      gap: 8px;
+    }
+
+    .brvnara-item {
+      display: flex;
+      gap: 12px;
+      padding: 10px 12px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 10px;
+      opacity: 0;
+      transform: translateY(10px);
+      animation: appear 0.4s ease forwards;
+    }
+
+    .brvnara-item:nth-child(1){ animation-delay: .08s; }
+    .brvnara-item:nth-child(2){ animation-delay: .16s; }
+    .brvnara-item:nth-child(3){ animation-delay: .24s; }
+    .brvnara-item:nth-child(4){ animation-delay: .32s; }
+    .brvnara-item:nth-child(5){ animation-delay: .40s; }
+    .brvnara-item:nth-child(6){ animation-delay: .48s; }
+    .brvnara-item:nth-child(7){ animation-delay: .56s; }
+    .brvnara-item:nth-child(8){ animation-delay: .64s; }
+    .brvnara-item:nth-child(9){ animation-delay: .72s; }
+
+    @keyframes appear {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      background: var(--accent);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .brvnara-cta {
+      background: rgba(0,0,0,0.3);
+      padding: 18px;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .brvnara-btn {
+      text-decoration: none;
+      background: linear-gradient(90deg, var(--accent), #ffcf6b);
+      color: #111;
+      padding: 10px 14px;
+      font-weight: 700;
+      border-radius: 8px;
+      display: inline-block;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(243,167,18,0.3);
+      transition: 0.15s;
+    }
+
+    .brvnara-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 40px rgba(243,167,18,0.4);
+    }
+
+    .small-ghost {
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 10px 12px;
+      border-radius: 8px;
+      color: #fff;
+      text-align: center;
+      font-weight: 600;
+    }
+  </style>
+
+  <div class="brvnara-inner">
+    <div>
+      <div class="brvnara-title" id="brvnara-title">🪚 Na vašoj brvnari radimo:</div>
+
+      <ul class="brvnara-list">
+        <li class="brvnara-item"><span class="dot"></span>ceo drveni deo</li>
+        <li class="brvnara-item"><span class="dot"></span>stepeniste</li>
+        <li class="brvnara-item"><span class="dot"></span>pregrade</li>
+        <li class="brvnara-item"><span class="dot"></span>pokrivka ( lim )</li>
+        <li class="brvnara-item"><span class="dot"></span>stolarija</li>
+        <li class="brvnara-item"><span class="dot"></span>patosi</li>
+        <li class="brvnara-item"><span class="dot"></span>zastita drveta</li>
+        <li class="brvnara-item"><span class="dot"></span>izolacija u krovu (staklena vuna i paropropustna folija)</li>
+        <li class="brvnara-item"><span class="dot"></span>izolacija u podu</li>
+      </ul>
+    </div>
+
+    <div class="brvnara-cta">
+      <h3>Zainteresovan/a?</h3>
+      <p>Kontaktirajte nas odmah i dogovorite besplatnu procenu. Radimo brzo, kvalitetno i sa garancijom.</p>
+
+      <a class="brvnara-btn" href="mailto:kontakt@example.com">Pošaljite poruku</a>
+      <a class="small-ghost" href="#kontakt">Kontakt forma</a>
+    </div>
+  </div>
+</section>
+<!-- ==== KRAJ: Brvnara sekcija ==== -->
 <section id="galerija">
   <h3>Galerija</h3>
   <img src="https://images.unsplash.com/photo-1601902182208-2c20a5d23fc4?auto=format&fit=crop&w=400&q=80" alt="Brvnara 1">
