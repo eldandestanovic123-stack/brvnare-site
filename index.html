@@ -233,190 +233,63 @@
   </div>
 </section>
 <!-- ==== KRAJ: Brvnara sekcija ==== -->
-<section id="galerija-profi">
+<!-- === GALERIJA BRVNARA – READY TO GO === -->
+<section id="brvnaraGalleryWrapper">
   <h3>Galerija Brvnara</h3>
 
-  <div class="gp-grid">
-    <img src="https://i.ibb.co/CKgQvHqM" alt="">
-    <img src="https://i.ibb.co/FcMr8P0" alt="">
-    <img src="https://i.ibb.co/q3K2x41j" alt="">
-    <img src="https://i.ibb.co/8Dj3m3yc" alt="">
-    <img src="https://i.ibb.co/zWNtkM0T" alt="">
-    <img src="https://i.ibb.co/Z1HqkMLj" alt="">
-    <img src="https://i.ibb.co/bMZQBrxB" alt="">
-    <img src="https://i.ibb.co/0RKR0vNX" alt="">
-    <img src="https://i.ibb.co/kVWt5mY1" alt="">
-    <img src="https://i.ibb.co/99r07TKk" alt="">
-    <img src="https://i.ibb.co/vCgR6pXT" alt="">
-    <img src="https://i.ibb.co/1GMbtyBm" alt="">
-    <img src="https://i.ibb.co/RpNtvjpf" alt="">
-    <img src="https://i.ibb.co/F4DdJ7gr" alt="">
-    <img src="https://i.ibb.co/1JmH0B4m" alt="">
-    <img src="https://i.ibb.co/vCP9sQ5X" alt="">
-    <img src="https://i.ibb.co/671TfHJ6" alt="">
-    <img src="https://i.ibb.co/qMhn6drD" alt="">
-  </div>
-
-  <div id="gp-lightbox" class="gp-hidden">
-    <span id="gp-close">&times;</span>
-    <img id="gp-img" src="">
-    <div class="gp-thumbs"></div>
-    <span id="gp-prev">&#10094;</span>
-    <span id="gp-next">&#10095;</span>
+  <div id="brvnaraGalleryGrid">
+    <img src="https://i.ibb.co/wFgsFnrY/IMG-7821.jpg" data-full="https://i.ibb.co/wFgsFnrY/IMG-7821.jpg" alt="IMG-7821">
+    <img src="https://i.ibb.co/3ybk4r83/IMG-7820.webp" data-full="https://i.ibb.co/3ybk4r83/IMG-7820.webp" alt="IMG-7820">
+    <img src="https://i.ibb.co/7dgTPgCh/IMG-7819.jpg" data-full="https://i.ibb.co/7dgTPgCh/IMG-7819.jpg" alt="IMG-7819">
+    <img src="https://i.ibb.co/KCbYV1f/IMG-5768.jpg" data-full="https://i.ibb.co/KCbYV1f/IMG-5768.jpg" alt="IMG-5768">
+    <img src="https://i.ibb.co/NdZyv51B/IMG-7811.jpg" data-full="https://i.ibb.co/NdZyv51B/IMG-7811.jpg" alt="IMG-7811">
+    <img src="https://i.ibb.co/Myvh5NwS/IMG-5764.jpg" data-full="https://i.ibb.co/Myvh5NwS/IMG-5764.jpg" alt="IMG-5764">
+    <img src="https://i.ibb.co/fzGNnrqt/IMG-4815.jpg" data-full="https://i.ibb.co/fzGNnrqt/IMG-4815.jpg" alt="IMG-4815">
   </div>
 </section>
 
+<!-- LIGHTBOX -->
+<div id="brvnaraLightbox">
+  <span id="brvnaraCloseBtn">&times;</span>
+  <span id="brvnaraPrev" class="brvnaraArrow">&#10094;</span>
+  <img id="brvnaraLightImg">
+  <span id="brvnaraNext" class="brvnaraArrow">&#10095;</span>
+  <div id="brvnaraPreviewRow"></div>
+</div>
+
 <style>
-/* GRID */
-.gp-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 12px;
-  padding: 15px;
-  justify-items: center;
-}
-
-.gp-grid img {
-  width: 100%;
-  aspect-ratio: 4/3;
-  object-fit: cover;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.18);
-}
-
-.gp-grid img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-}
-
-/* LIGHTBOX */
-.gp-hidden { display: none; }
-#gp-lightbox {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.92);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  z-index: 99999;
-  animation: gp-fadeIn 0.25s ease;
-  padding: 10px;
-}
-
-#gp-img {
-  max-width: 100%;
-  max-height: 65vh;
-  border-radius: 12px;
-  animation: gp-zoomIn 0.25s ease;
-  margin-bottom: 10px;
-}
-
-#gp-close,#gp-prev,#gp-next {
-  position: absolute;
-  color: white;
-  font-size: 36px;
-  cursor: pointer;
-  user-select: none;
-  padding: 8px;
-  transition: 0.2s;
-}
-
-#gp-close { top: 15px; right: 25px; }
-#gp-prev { left: 20px; top:50%; transform: translateY(-50%); }
-#gp-next { right: 20px; top:50%; transform: translateY(-50%); }
-#gp-prev:hover,#gp-next:hover,#gp-close:hover { color: #f3a712; }
-
-/* PREVIEW THUMBS */
-.gp-thumbs {
-  display: flex;
-  overflow-x: auto;
-  gap: 8px;
-  padding: 5px 0;
-  width: 100%;
-  justify-content: flex-start;
-  -webkit-overflow-scrolling: touch;
-  scroll-behavior: smooth;
-}
-
-.gp-thumbs img {
-  width: 50px;
-  height: 38px;
-  object-fit: cover;
-  border-radius: 4px;
-  cursor: pointer;
-  opacity: 0.7;
-  transition: 0.2s;
-  flex-shrink: 0;
-}
-
-.gp-thumbs img.gp-active,
-.gp-thumbs img:hover {
-  opacity: 1;
-  transform: scale(1.05);
-}
-
-/* ANIMATIONS */
-@keyframes gp-fadeIn { from { opacity: 0; } to { opacity: 1; } }
-@keyframes gp-zoomIn { from { transform: scale(0.85); } to { transform: scale(1); } }
-
-/* MOBILE */
-@media (max-width: 480px) {
-  #gp-img { max-height: 55vh; }
-  #gp-close,#gp-prev,#gp-next { font-size: 30px; padding: 6px; }
-  .gp-thumbs img { width: 40px; height: 30px; }
-  .gp-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 10px; }
-}
+#brvnaraGalleryWrapper * { box-sizing: border-box; }
+#brvnaraGalleryGrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px,1fr)); gap:10px; }
+#brvnaraGalleryGrid img { width:100%; height:140px; object-fit:cover; border-radius:6px; cursor:pointer; transition:transform .2s; }
+#brvnaraGalleryGrid img:hover { transform:scale(1.03); }
+#brvnaraLightbox { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85); z-index:999999999; justify-content:center; align-items:center; flex-direction:column; padding:10px; }
+#brvnaraLightbox img { max-width:95vw; max-height:80vh; border-radius:8px; }
+#brvnaraCloseBtn { position:absolute; top:10px; right:15px; font-size:35px; color:#fff; cursor:pointer; }
+.brvnaraArrow { position:absolute; top:50%; transform:translateY(-50%); font-size:45px; color:white; cursor:pointer; padding:10px; user-select:none; }
+#brvnaraPrev { left:10px; } #brvnaraNext { right:10px; }
+#brvnaraPreviewRow { display:flex; overflow-x:auto; gap:6px; margin-top:15px; padding-bottom:10px; width:100%; }
+#brvnaraPreviewRow img { width:70px; height:70px; object-fit:cover; border-radius:4px; opacity:.6; cursor:pointer; flex-shrink:0; }
+#brvnaraPreviewRow img.active { opacity:1; border:2px solid white; }
+@media(max-width:600px){#brvnaraGalleryGrid{grid-template-columns:repeat(auto-fill,minmax(120px,1fr));}#brvnaraPreviewRow img{width:55px;height:55px;}.brvnaraArrow{font-size:35px;}}
 </style>
 
 <script>
-(function(){
-  const imgs = Array.from(document.querySelectorAll('.gp-grid img'));
-  const lightbox = document.getElementById('gp-lightbox');
-  const lbImg = document.getElementById('gp-img');
-  const thumbs = lightbox.querySelector('.gp-thumbs');
-  let idx = 0;
-
-  // create preview thumbs
-  imgs.forEach((img,i)=>{
-    const t = img.cloneNode();
-    thumbs.appendChild(t);
-    t.addEventListener('click',()=>{ idx=i; updateLB(); });
-  });
-
-  function updateLB(){
-    lbImg.src = imgs[idx].src;
-    const thumbImgs = thumbs.querySelectorAll('img');
-    thumbImgs.forEach((t,i)=>t.classList.toggle('gp-active',i===idx));
-
-    // snap active thumbnail to center
-    const active = thumbImgs[idx];
-    if(active){
-      const cWidth = thumbs.clientWidth;
-      const tWidth = active.offsetWidth;
-      const scrollPos = active.offsetLeft - cWidth/2 + tWidth/2;
-      thumbs.scrollTo({left: scrollPos, behavior: 'smooth'});
-    }
-  }
-
-  imgs.forEach((img,i)=>{
-    img.addEventListener('click',()=>{ idx=i; lightbox.classList.remove('gp-hidden'); updateLB(); });
-  });
-
-  document.getElementById('gp-close').addEventListener('click',()=>lightbox.classList.add('gp-hidden'));
-  document.getElementById('gp-next').addEventListener('click',()=>{ idx=(idx+1)%imgs.length; updateLB(); });
-  document.getElementById('gp-prev').addEventListener('click',()=>{ idx=(idx-1+imgs.length)%imgs.length; updateLB(); });
-
-  lightbox.addEventListener('click',e=>{ if(e.target===lightbox) lightbox.classList.add('gp-hidden'); });
-
-  document.addEventListener('keydown',e=>{
-    if(e.key==='Escape') lightbox.classList.add('gp-hidden');
-    if(e.key==='ArrowRight') document.getElementById('gp-next').click();
-    if(e.key==='ArrowLeft') document.getElementById('gp-prev').click();
-  });
-})();
+const grid=document.querySelectorAll("#brvnaraGalleryGrid img");
+const lightbox=document.getElementById("brvnaraLightbox");
+const lightImg=document.getElementById("brvnaraLightImg");
+const previewRow=document.getElementById("brvnaraPreviewRow");
+const closeBtn=document.getElementById("brvnaraCloseBtn");
+const nextBtn=document.getElementById("brvnaraNext");
+const prevBtn=document.getElementById("brvnaraPrev");
+let current=0;
+let images=[];
+grid.forEach((img,i)=>{images.push(img.dataset.full); img.addEventListener("click",()=>{current=i; showImage(); lightbox.style.display="flex";});});
+function showImage(){lightImg.src=images[current]; previewRow.innerHTML=""; images.forEach((src,i)=>{const p=document.createElement("img");p.src=src;if(i===current)p.classList.add("active");p.addEventListener("click",()=>{current=i;showImage();}); previewRow.appendChild(p);});}
+closeBtn.onclick=()=>lightbox.style.display="none";
+nextBtn.onclick=()=>{current=(current+1)%images.length; showImage();};
+prevBtn.onclick=()=>{current=(current-1+images.length)%images.length; showImage();};
+window.onkeydown=e=>{if(e.key==="Escape")lightbox.style.display="none"; if(e.key==="ArrowRight") nextBtn.onclick(); if(e.key==="ArrowLeft") prevBtn.onclick();};
+lightbox.addEventListener("click",e=>{if(e.target===lightbox) lightbox.style.display="none";});
 </script>
 <section id="cene">
   <h3>Okvirne cene</h3>
