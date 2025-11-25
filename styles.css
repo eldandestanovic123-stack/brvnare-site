@@ -1,0 +1,8 @@
+body{font-family:sans-serif; margin:0; padding:0; line-height:1.4; background:#f7f7f7; color:#222;}
+header, section, footer{padding:20px; text-align:center; background:#fff; margin-bottom:10px; border-radius:10px;}
+button, .button{background:#2b7a4b; color:#fff; padding:10px 16px; border:none; border-radius:8px; text-decoration:none;}
+.button.outline{background:transparent; border:2px solid #2b7a4b; color:#2b7a4b;}
+img{max-width:100%; border-radius:8px; margin-top:10px;}
+form label{display:block; margin:10px 0; text-align:left;}
+form input, form select, form textarea{width:100%; padding:8px; margin-top:4px; border:1px solid #ccc; border-radius:6px;}
+@media (min-width:600px){section{padding:40px;} header h1{font-size:28px;}}
