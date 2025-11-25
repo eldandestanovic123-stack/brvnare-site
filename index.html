@@ -56,7 +56,7 @@
   <p>📞 <strong>Kontakt:</strong> 062-406-649</p>
   <p>✨ Izgradite svoju oazu mira uz našu pomoć!</p>
 </section>
-<section id="kvalitet" class="brvnara-cinematic-soft">
+<section id="kvalitet" class="brvnara-clean-bg">
   <h3>Zašto su naše brvnare vrhunskog kvaliteta</h3>
   <p>U Brvnare Tutin posvećujemo maksimalnu pažnju svakom detalju, od izbora drveta do završne obrade, kako bismo osigurali dugovečnost, estetiku i udobnost vaše brvnare.</p>
   
@@ -72,55 +72,64 @@
 </section>
 
 <style>
-/* =================================== */
-/* Soft cinematic pozadina za svetlu stranu sajta */
-.brvnara-cinematic-soft {
+/* =============================== */
+/* Profesionalna sekcija sa jasnom brvnarom */
+.brvnara-clean-bg {
   position: relative;
   overflow: hidden;
-  padding: 70px 30px;
-  border-radius: 20px; /* lepo zaobljena sekcija */
+  padding: 60px 30px;
+  border-radius: 16px;
   max-width: 900px;
   margin: 40px auto;
   text-align: left;
   color: #fff;
-  background: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.05)),
-              url('https://images.unsplash.com/photo-1601902182208-2c20a5d23fc4?auto=format&fit=crop&w=1600&q=90') center/cover no-repeat;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
-  font-family: "Inter", sans-serif;
-  font-size: 17px;
+  background: url('https://i.ibb.co/7dgTPgCh/IMG-7819.jpg') center/cover no-repeat;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Blagi overlay za bolju čitljivost, vrlo proziran */
+.brvnara-clean-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.12); /* mekši overlay, slika jasnija */
+  z-index: 0;
+  backdrop-filter: blur(1px); /* lagani blur samo za overlay */
+}
+
+/* Sadržaj sekcije iznad overlay-a */
+.brvnara-clean-bg > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Lista i tekst */
+.brvnara-clean-bg ul li {
+  margin-bottom: 12px;
   line-height: 1.8;
 }
-
-/* Lista */
-.brvnara-cinematic-soft ul li {
-  margin-bottom: 14px;
-  line-height: 1.7;
+.brvnara-clean-bg ul li::before {
+  content: "✅ ";
+  color: #ffd700;
 }
-.brvnara-cinematic-soft ul li::before {
-  content:"✅";
-  margin-right:6px;
-  color:#ffd700;
-}
-
-/* Tekst sa laganim shadow za bolju čitljivost */
-.brvnara-cinematic-soft p,
-.brvnara-cinematic-soft li,
-.brvnara-cinematic-soft h3 {
-  text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+.brvnara-clean-bg p,
+.brvnara-clean-bg li,
+.brvnara-clean-bg h3 {
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
 }
 
 /* Fade-in animacija */
-.brvnara-cinematic-soft {
+.brvnara-clean-bg {
   animation: fadeInSection 1.5s ease-in forwards;
 }
 @keyframes fadeInSection {
-  from { opacity:0; transform: translateY(15px); }
+  from { opacity:0; transform: translateY(10px); }
   to { opacity:1; transform: translateY(0); }
 }
 
 /* Responsive */
 @media (max-width:768px) {
-  .brvnara-cinematic-soft {
+  .brvnara-clean-bg {
     padding: 50px 20px;
     font-size: 16px;
   }
