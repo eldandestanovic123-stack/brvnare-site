@@ -233,10 +233,10 @@
   </div>
 </section>
 <!-- ==== KRAJ: Brvnara sekcija ==== -->
-<section id="galerija">
+<section id="galerija-profi">
   <h3>Galerija Brvnara</h3>
 
-  <div class="galerija-grid">
+  <div class="gp-grid">
     <img src="https://i.ibb.co/CKgQvHqM" alt="">
     <img src="https://i.ibb.co/FcMr8P0" alt="">
     <img src="https://i.ibb.co/q3K2x41j" alt="">
@@ -257,159 +257,166 @@
     <img src="https://i.ibb.co/qMhn6drD" alt="">
   </div>
 
-  <!-- LIGHTBOX -->
-  <div id="lightbox" class="hidden">
-    <span id="close">&times;</span>
-    <img id="lightbox-img" src="">
-    <div class="preview-thumbs"></div>
-    <span id="prev">&#10094;</span>
-    <span id="next">&#10095;</span>
+  <div id="gp-lightbox" class="gp-hidden">
+    <span id="gp-close">&times;</span>
+    <img id="gp-img" src="">
+    <div class="gp-thumbs"></div>
+    <span id="gp-prev">&#10094;</span>
+    <span id="gp-next">&#10095;</span>
   </div>
 </section>
 
 <style>
-/* Grid galerija */
-.galerija-grid {
+/* GRID */
+.gp-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-  gap: 15px;
-  padding: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 12px;
+  padding: 15px;
   justify-items: center;
 }
 
-.galerija-grid img {
+.gp-grid img {
   width: 100%;
   aspect-ratio: 4/3;
   object-fit: cover;
   border-radius: 10px;
   cursor: pointer;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.18);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.18);
 }
 
-.galerija-grid img:hover {
+.gp-grid img:hover {
   transform: scale(1.05);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
 }
 
-/* Lightbox */
-#lightbox.hidden { display: none; }
-#lightbox {
+/* LIGHTBOX */
+.gp-hidden { display: none; }
+#gp-lightbox {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.88);
+  background: rgba(0,0,0,0.92);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   z-index: 99999;
-  animation: fadeIn 0.3s ease;
+  animation: gp-fadeIn 0.25s ease;
+  padding: 10px;
 }
 
-#lightbox img {
-  max-width: 90%;
-  max-height: 70vh;
+#gp-img {
+  max-width: 100%;
+  max-height: 65vh;
   border-radius: 12px;
-  animation: zoomIn 0.3s ease;
-  margin-bottom: 15px;
+  animation: gp-zoomIn 0.25s ease;
+  margin-bottom: 10px;
 }
 
-#close,#prev,#next {
+#gp-close,#gp-prev,#gp-next {
   position: absolute;
   color: white;
-  font-size: 40px;
+  font-size: 36px;
   cursor: pointer;
   user-select: none;
-  padding: 10px;
+  padding: 8px;
   transition: 0.2s;
 }
-#close { top: 20px; right: 35px; }
-#prev { left: 40px; top:50%; transform: translateY(-50%); }
-#next { right: 40px; top:50%; transform: translateY(-50%); }
-#prev:hover,#next:hover,#close:hover { color: #f3a712; }
 
-/* Preview thumbnails */
-.preview-thumbs {
+#gp-close { top: 15px; right: 25px; }
+#gp-prev { left: 20px; top:50%; transform: translateY(-50%); }
+#gp-next { right: 20px; top:50%; transform: translateY(-50%); }
+#gp-prev:hover,#gp-next:hover,#gp-close:hover { color: #f3a712; }
+
+/* PREVIEW THUMBS */
+.gp-thumbs {
   display: flex;
   overflow-x: auto;
-  gap: 10px;
-  padding: 5px 10px;
-  width: 90%;
-  justify-content: center;
+  gap: 8px;
+  padding: 5px 0;
+  width: 100%;
+  justify-content: flex-start;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
 }
 
-.preview-thumbs img {
-  width: 60px;
-  height: 45px;
+.gp-thumbs img {
+  width: 50px;
+  height: 38px;
   object-fit: cover;
-  border-radius: 6px;
+  border-radius: 4px;
   cursor: pointer;
   opacity: 0.7;
   transition: 0.2s;
+  flex-shrink: 0;
 }
 
-.preview-thumbs img.active,
-.preview-thumbs img:hover {
+.gp-thumbs img.gp-active,
+.gp-thumbs img:hover {
   opacity: 1;
   transform: scale(1.05);
 }
 
-/* Animations */
-@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-@keyframes zoomIn { from { transform: scale(0.85); } to { transform: scale(1); } }
+/* ANIMATIONS */
+@keyframes gp-fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes gp-zoomIn { from { transform: scale(0.85); } to { transform: scale(1); } }
+
+/* MOBILE */
+@media (max-width: 480px) {
+  #gp-img { max-height: 55vh; }
+  #gp-close,#gp-prev,#gp-next { font-size: 30px; padding: 6px; }
+  .gp-thumbs img { width: 40px; height: 30px; }
+  .gp-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 10px; }
+}
 </style>
 
 <script>
-const images = Array.from(document.querySelectorAll('.galerija-grid img'));
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.getElementById('lightbox-img');
-const previewContainer = lightbox.querySelector('.preview-thumbs');
-let currentIndex = 0;
+(function(){
+  const imgs = Array.from(document.querySelectorAll('.gp-grid img'));
+  const lightbox = document.getElementById('gp-lightbox');
+  const lbImg = document.getElementById('gp-img');
+  const thumbs = lightbox.querySelector('.gp-thumbs');
+  let idx = 0;
 
-// kreiraj preview thumbnails
-images.forEach((img, index) => {
-  const thumb = img.cloneNode();
-  previewContainer.appendChild(thumb);
-  thumb.addEventListener('click', () => {
-    currentIndex = index;
-    updateLightbox();
+  // create preview thumbs
+  imgs.forEach((img,i)=>{
+    const t = img.cloneNode();
+    thumbs.appendChild(t);
+    t.addEventListener('click',()=>{ idx=i; updateLB(); });
   });
-});
 
-function updateLightbox(){
-  lightboxImg.src = images[currentIndex].src;
-  previewContainer.querySelectorAll('img').forEach((t, i) => {
-    t.classList.toggle('active', i === currentIndex);
+  function updateLB(){
+    lbImg.src = imgs[idx].src;
+    const thumbImgs = thumbs.querySelectorAll('img');
+    thumbImgs.forEach((t,i)=>t.classList.toggle('gp-active',i===idx));
+
+    // snap active thumbnail to center
+    const active = thumbImgs[idx];
+    if(active){
+      const cWidth = thumbs.clientWidth;
+      const tWidth = active.offsetWidth;
+      const scrollPos = active.offsetLeft - cWidth/2 + tWidth/2;
+      thumbs.scrollTo({left: scrollPos, behavior: 'smooth'});
+    }
+  }
+
+  imgs.forEach((img,i)=>{
+    img.addEventListener('click',()=>{ idx=i; lightbox.classList.remove('gp-hidden'); updateLB(); });
   });
-}
 
-// click na grid sliku
-images.forEach((img, index)=>{
-  img.addEventListener('click', ()=>{
-    currentIndex = index;
-    lightbox.classList.remove('hidden');
-    updateLightbox();
+  document.getElementById('gp-close').addEventListener('click',()=>lightbox.classList.add('gp-hidden'));
+  document.getElementById('gp-next').addEventListener('click',()=>{ idx=(idx+1)%imgs.length; updateLB(); });
+  document.getElementById('gp-prev').addEventListener('click',()=>{ idx=(idx-1+imgs.length)%imgs.length; updateLB(); });
+
+  lightbox.addEventListener('click',e=>{ if(e.target===lightbox) lightbox.classList.add('gp-hidden'); });
+
+  document.addEventListener('keydown',e=>{
+    if(e.key==='Escape') lightbox.classList.add('gp-hidden');
+    if(e.key==='ArrowRight') document.getElementById('gp-next').click();
+    if(e.key==='ArrowLeft') document.getElementById('gp-prev').click();
   });
-});
-
-// controls
-document.getElementById('close').addEventListener('click', ()=>lightbox.classList.add('hidden'));
-document.getElementById('next').addEventListener('click', ()=>{
-  currentIndex = (currentIndex +1)%images.length; updateLightbox();
-});
-document.getElementById('prev').addEventListener('click', ()=>{
-  currentIndex = (currentIndex -1 +images.length)%images.length; updateLightbox();
-});
-
-// klik van slike
-lightbox.addEventListener('click', e=>{if(e.target===lightbox) lightbox.classList.add('hidden');});
-
-// tastatura
-document.addEventListener('keydown', e=>{
-  if(e.key==='Escape') lightbox.classList.add('hidden');
-  if(e.key==='ArrowRight') document.getElementById('next').click();
-  if(e.key==='ArrowLeft') document.getElementById('prev').click();
-});
+})();
 </script>
 <section id="cene">
   <h3>Okvirne cene</h3>
