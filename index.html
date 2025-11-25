@@ -8,6 +8,7 @@
 <meta name="description" content="Cinematic prikaz ekskluzivnih brvnara u prirodnom ambijentu. Luksuzna izgradnja, moderan dizajn, premium kvalitet drveta.">
 
 <style>
+    /* Fade-in za ceo sajt */
     body {
         margin: 0;
         font-family: "Inter", sans-serif;
@@ -16,28 +17,42 @@
         min-height: 100vh;
         position: relative;
         overflow-x: hidden;
+        opacity: 0;
+        animation: fadeIn 1.8s ease forwards;
     }
 
-    /* --- Cinematic pozadinska slika --- */
+    @keyframes fadeIn {
+        to { opacity: 1; }
+    }
+
+    /* ----------------------------- */
+    /*  PARALLAX + BLAGI BLUR SLIKA  */
+    /* ----------------------------- */
+
     body::before {
         content: "";
         position: fixed;
         top: 0;
         left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: url('https://images.unsplash.com/photo-1601902182208-2c20a5d23fc4?auto=format&fit=crop&w=1500&q=80');
+        width: 110%;        /* šire zbog parallax efekta */
+        height: 110%;
+        background-image: url('https://images.unsplash.com/photo-1615870216519-2f9fa2af6e2a?auto=format&fit=crop&w=1600&q=90');
         background-size: cover;
         background-position: center;
         filter:
-            blur(9px)
-            brightness(0.45)
-            contrast(1.25)
-            saturate(1.2);
+            blur(3px)
+            brightness(0.92)
+            saturate(1.15);
         z-index: -3;
+        animation: parallaxMove 18s ease-in-out infinite alternate;
     }
 
-    /* --- Cinematic color grading njihanje (teal/orange ton) --- */
+    @keyframes parallaxMove {
+        0%   { transform: scale(1.03) translateY(0px); }
+        100% { transform: scale(1.06) translateY(-18px); }
+    }
+
+    /* Blagi cinematic dark overlay */
     body::after {
         content: "";
         position: fixed;
@@ -45,16 +60,11 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background:
-            linear-gradient(
-                rgba(10, 20, 30, 0.6),
-                rgba(30, 10, 0, 0.55)
-            );
-        mix-blend-mode: overlay;
+        background: rgba(0,0,0,0.22);
         z-index: -2;
     }
 
-    /* --- Cinematic vignette --- */
+    /* Vignette */
     .vignette {
         content: "";
         position: fixed;
@@ -65,13 +75,13 @@
         pointer-events: none;
         background: radial-gradient(
             circle,
-            rgba(0,0,0,0) 40%,
-            rgba(0,0,0,0.6) 100%
+            rgba(0,0,0,0) 55%,
+            rgba(0,0,0,0.35) 100%
         );
         z-index: -1;
     }
 
-    /* --- Soft Film Grain (cinema effect) --- */
+    /* Film grain */
     .grain {
         content: "";
         position: fixed;
@@ -79,25 +89,26 @@
         left: 0;
         width: 100%;
         height: 100%;
-        opacity: 0.12;
+        opacity: 0.06;
         background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
         mix-blend-mode: soft-light;
         pointer-events: none;
         z-index: -1;
     }
+
 </style>
 
 <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 <div class="vignette"></div>
 <div class="grain"></div>
-<body>
+
 <header>
   <h1>Brvnare Tutin</h1>
   <p>Brvnare po meri | Brza montaža | Garancija kvaliteta</p>
 </header>
-
 <section id="hero">
   <h2>Izgradnja brvnara po meri — od temelja do krova</h2>
   <p>Moderne i tradicionalne brvnare za porodični odmor ili izdavanje. Cena od <strong>290 do 310 €/m²</strong>.</p>
