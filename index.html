@@ -73,7 +73,7 @@
 
 <style>
 /* =============================== */
-/* Sekcija sa novom slikom brvnare */
+/* Sekcija sa novom sliku brvnare, više zumirana i manje blurovana */
 .brvnara-clean-bg {
   position: relative;
   overflow: hidden;
@@ -83,18 +83,18 @@
   margin: 40px auto;
   text-align: left;
   color: #fff;
-  background: url('https://i.ibb.co/m5vKZN26/IMG-7824.jpg') center/contain no-repeat; /* nova slika */
+  background: url('https://i.ibb.co/m5vKZN26/IMG-7824.jpg') center/110% no-repeat; /* 10% više zumirano */
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
-/* Jači overlay + lagani blur za čitljivost */
+/* Overlay i lagani blur za čitljivost */
 .brvnara-clean-bg::after {
   content: '';
   position: absolute;
   inset: 0;
   background: rgba(0,0,0,0.25);
   z-index: 0;
-  backdrop-filter: blur(3px);
+  backdrop-filter: blur(2px); /* 30% manje blurovano */
 }
 
 /* Sadržaj sekcije iznad overlay-a */
