@@ -56,7 +56,7 @@
   <p>📞 <strong>Kontakt:</strong> 062-406-649</p>
   <p>✨ Izgradite svoju oazu mira uz našu pomoć!</p>
 </section>
-<section id="kvalitet" class="brvnara-cinematic-pro">
+<section id="kvalitet" class="brvnara-cinematic-soft">
   <h3>Zašto su naše brvnare vrhunskog kvaliteta</h3>
   <p>U Brvnare Tutin posvećujemo maksimalnu pažnju svakom detalju, od izbora drveta do završne obrade, kako bismo osigurali dugovečnost, estetiku i udobnost vaše brvnare.</p>
   
@@ -69,110 +69,59 @@
   </ul>
 
   <p>Naša misija je da svaka brvnara bude <strong>sigurna, lepa i dugovečna</strong>, a vi možete uživati u svom kutku prirode bez brige.</p>
-
-  <div class="vignette"></div>
-  <div class="grain"></div>
 </section>
 
 <style>
 /* =================================== */
-/* Cinematic profesionalna sekcija */
-.brvnara-cinematic-pro {
+/* Soft cinematic pozadina za svetlu stranu sajta */
+.brvnara-cinematic-soft {
   position: relative;
   overflow: hidden;
-  padding: 80px 40px;
-  border-radius: 14px;
-  color: #fff;
-  max-width: 1000px;
+  padding: 70px 30px;
+  border-radius: 20px; /* lepo zaobljena sekcija */
+  max-width: 900px;
   margin: 40px auto;
   text-align: left;
-  background-color: rgba(0,0,0,0.15);
+  color: #fff;
+  background: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.05)),
+              url('https://images.unsplash.com/photo-1601902182208-2c20a5d23fc4?auto=format&fit=crop&w=1600&q=90') center/cover no-repeat;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
   font-family: "Inter", sans-serif;
   font-size: 17px;
   line-height: 1.8;
 }
 
-/* Lebdeća pozadina */
-.brvnara-cinematic-pro::before {
-  content: '';
-  position: absolute;
-  top: -10%;
-  left: -10%;
-  width: 120%;
-  height: 120%;
-  background: url('https://images.unsplash.com/photo-1601902182208-2c20a5d23fc4?auto=format&fit=crop&w=1600&q=90') center/cover no-repeat fixed;
-  filter: blur(4px) brightness(0.75) saturate(1.2);
-  z-index: -1;
-  pointer-events: none;
-  animation: lebdecaPozadina 15s ease-in-out infinite alternate;
-}
-
-/* Cinematic overlay */
-.brvnara-cinematic-pro::after {
-  content:'';
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background: linear-gradient(135deg, rgba(10,25,50,0.3), rgba(200,100,40,0.25));
-  mix-blend-mode: overlay;
-  z-index: -1;
-  pointer-events: none;
-}
-
-/* Vignette i Grain */
-.brvnara-cinematic-pro .vignette,
-.brvnara-cinematic-pro .grain {
-  position:absolute;
-  inset:0;
-  pointer-events: none;
-  z-index: -1;
-}
-.brvnara-cinematic-pro .vignette {
-  background: radial-gradient(circle, rgba(0,0,0,0) 65%, rgba(0,0,0,0.45) 100%);
-}
-.brvnara-cinematic-pro .grain {
-  background-image: url('https://www.transparenttextures.com/patterns/asfalt-light.png');
-  mix-blend-mode: soft-light;
-  opacity: 0.05;
-}
-
-/* Tekst i lista */
-.brvnara-cinematic-pro p, .brvnara-cinematic-pro li {
-  color: #fff;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
-}
-.brvnara-cinematic-pro ul li {
+/* Lista */
+.brvnara-cinematic-soft ul li {
   margin-bottom: 14px;
-  line-height: 1.8;
+  line-height: 1.7;
 }
-.brvnara-cinematic-pro ul li::before {
+.brvnara-cinematic-soft ul li::before {
   content:"✅";
   margin-right:6px;
   color:#ffd700;
 }
 
+/* Tekst sa laganim shadow za bolju čitljivost */
+.brvnara-cinematic-soft p,
+.brvnara-cinematic-soft li,
+.brvnara-cinematic-soft h3 {
+  text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
+
 /* Fade-in animacija */
-.brvnara-cinematic-pro {
+.brvnara-cinematic-soft {
   animation: fadeInSection 1.5s ease-in forwards;
 }
 @keyframes fadeInSection {
-  from { opacity:0; transform: translateY(25px); }
+  from { opacity:0; transform: translateY(15px); }
   to { opacity:1; transform: translateY(0); }
 }
 
-/* Lebdeća animacija pozadine */
-@keyframes lebdecaPozadina {
-  0%   { transform: translateY(0px) scale(1.05); }
-  50%  { transform: translateY(-18px) scale(1.05); }
-  100% { transform: translateY(0px) scale(1.05); }
-}
-
-/* Responsive za manje ekrane */
+/* Responsive */
 @media (max-width:768px) {
-  .brvnara-cinematic-pro {
-    padding: 60px 20px;
+  .brvnara-cinematic-soft {
+    padding: 50px 20px;
     font-size: 16px;
   }
 }
