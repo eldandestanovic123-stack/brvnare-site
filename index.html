@@ -3,10 +3,95 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Brvnare Tutin — Brvnare po meri</title>
-<meta name="description" content="Izgradnja brvnara po meri, brza montaža, prirodni materijali i garancija kvaliteta. Cena od 290 do 310 €/m².">
+
+<title>Brvnare Tutin — Cinematic Prirodne Brvnare</title>
+<meta name="description" content="Cinematic prikaz ekskluzivnih brvnara u prirodnom ambijentu. Luksuzna izgradnja, moderan dizajn, premium kvalitet drveta.">
+
+<style>
+    body {
+        margin: 0;
+        font-family: "Inter", sans-serif;
+        color: #fff;
+        background: #000;
+        min-height: 100vh;
+        position: relative;
+        overflow-x: hidden;
+    }
+
+    /* --- Cinematic pozadinska slika --- */
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('https://images.unsplash.com/photo-1601902182208-2c20a5d23fc4?auto=format&fit=crop&w=1500&q=80');
+        background-size: cover;
+        background-position: center;
+        filter:
+            blur(9px)
+            brightness(0.45)
+            contrast(1.25)
+            saturate(1.2);
+        z-index: -3;
+    }
+
+    /* --- Cinematic color grading njihanje (teal/orange ton) --- */
+    body::after {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background:
+            linear-gradient(
+                rgba(10, 20, 30, 0.6),
+                rgba(30, 10, 0, 0.55)
+            );
+        mix-blend-mode: overlay;
+        z-index: -2;
+    }
+
+    /* --- Cinematic vignette --- */
+    .vignette {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        background: radial-gradient(
+            circle,
+            rgba(0,0,0,0) 40%,
+            rgba(0,0,0,0.6) 100%
+        );
+        z-index: -1;
+    }
+
+    /* --- Soft Film Grain (cinema effect) --- */
+    .grain {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.12;
+        background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+        mix-blend-mode: soft-light;
+        pointer-events: none;
+        z-index: -1;
+    }
+</style>
+
 <link rel="stylesheet" href="styles.css">
 </head>
+<body>
+<div class="vignette"></div>
+<div class="grain"></div>
 <body>
 <header>
   <h1>Brvnare Tutin</h1>
