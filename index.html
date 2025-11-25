@@ -234,17 +234,47 @@
 </section>
 <!-- ==== KRAJ: Brvnara sekcija ==== -->
 <!-- === GALERIJA BRVNARA – READY TO GO === -->
+<!-- === GALERIJA BRVNARA – DVA ALBUMA SA TABOVIMA === -->
 <section id="brvnaraGalleryWrapper">
   <h3>Galerija Brvnara</h3>
 
-  <div id="brvnaraGalleryGrid">
+  <!-- Tab dugmad -->
+  <div id="brvnaraTabs" style="text-align:center; margin-bottom:20px;">
+    <button class="brvnaraTabBtn active" data-album="bungalovi">A-frame vikendice (Bungalovi)</button>
+    <button class="brvnaraTabBtn" data-album="klasicne">Klasične vikendice</button>
+  </div>
+
+  <!-- Album 1: Bungalovi -->
+  <div class="brvnaraGalleryGrid" data-album="bungalovi">
     <img src="https://i.ibb.co/wFgsFnrY/IMG-7821.jpg" data-full="https://i.ibb.co/wFgsFnrY/IMG-7821.jpg" alt="IMG-7821">
     <img src="https://i.ibb.co/3ybk4r83/IMG-7820.webp" data-full="https://i.ibb.co/3ybk4r83/IMG-7820.webp" alt="IMG-7820">
     <img src="https://i.ibb.co/7dgTPgCh/IMG-7819.jpg" data-full="https://i.ibb.co/7dgTPgCh/IMG-7819.jpg" alt="IMG-7819">
+    <img src="https://i.ibb.co/239m5p9T/IMG-5282.jpg" data-full="https://i.ibb.co/239m5p9T/IMG-5282.jpg" alt="IMG-5282">
+    <img src="https://i.ibb.co/FqbLY3BZ/IMG-7823.webp" data-full="https://i.ibb.co/FqbLY3BZ/IMG-7823.webp" alt="IMG-7823">
+    <img src="https://i.ibb.co/gF6n1QtY/IMG-5818.png" data-full="https://i.ibb.co/gF6n1QtY/IMG-5818.png" alt="IMG-5818">
+    <img src="https://i.ibb.co/ynPDqjMT/IMG-5481.jpg" data-full="https://i.ibb.co/ynPDqjMT/IMG-5481.jpg" alt="IMG-5481">
+    <img src="https://i.ibb.co/G47j5KRD/IMG-5771.jpg" data-full="https://i.ibb.co/G47j5KRD/IMG-5771.jpg" alt="IMG-5771">
+    <img src="https://i.ibb.co/q3gXb7TJ/IMG-5772.jpg" data-full="https://i.ibb.co/q3gXb7TJ/IMG-5772.jpg" alt="IMG-5772">
+    <img src="https://i.ibb.co/BWw8nrx/IMG-5774.jpg" data-full="https://i.ibb.co/BWw8nrx/IMG-5774.jpg" alt="IMG-5774">
+  </div>
+
+  <!-- Album 2: Klasične vikendice -->
+  <div class="brvnaraGalleryGrid" data-album="klasicne" style="display:none;">
     <img src="https://i.ibb.co/KCbYV1f/IMG-5768.jpg" data-full="https://i.ibb.co/KCbYV1f/IMG-5768.jpg" alt="IMG-5768">
     <img src="https://i.ibb.co/NdZyv51B/IMG-7811.jpg" data-full="https://i.ibb.co/NdZyv51B/IMG-7811.jpg" alt="IMG-7811">
     <img src="https://i.ibb.co/Myvh5NwS/IMG-5764.jpg" data-full="https://i.ibb.co/Myvh5NwS/IMG-5764.jpg" alt="IMG-5764">
     <img src="https://i.ibb.co/fzGNnrqt/IMG-4815.jpg" data-full="https://i.ibb.co/fzGNnrqt/IMG-4815.jpg" alt="IMG-4815">
+    <img src="https://i.ibb.co/B2KTMh5v/IMG-4811.jpg" data-full="https://i.ibb.co/B2KTMh5v/IMG-4811.jpg" alt="IMG-4811">
+    <img src="https://i.ibb.co/hJbDn8mp/IMG-5820.png" data-full="https://i.ibb.co/hJbDn8mp/IMG-5820.png" alt="IMG-5820">
+    <img src="https://i.ibb.co/W8W3Gn7/IMG-5765.jpg" data-full="https://i.ibb.co/W8W3Gn7/IMG-5765.jpg" alt="IMG-5765">
+    <img src="https://i.ibb.co/8gRpLf5r/11132.jpg" data-full="https://i.ibb.co/8gRpLf5r/11132.jpg" alt="11132">
+    <img src="https://i.ibb.co/LX1KGbXP/IMG-4781.jpg" data-full="https://i.ibb.co/LX1KGbXP/IMG-4781.jpg" alt="IMG-4781">
+    <img src="https://i.ibb.co/fYLHyRWx/IMG-7391.jpg" data-full="https://i.ibb.co/fYLHyRWx/IMG-7391.jpg" alt="IMG-7391">
+    <img src="https://i.ibb.co/cKGmVK11/IMG-4805.jpg" data-full="https://i.ibb.co/cKGmVK11/IMG-4805.jpg" alt="IMG-4805">
+    <img src="https://i.ibb.co/n801LRjf/IMG-4800.jpg" data-full="https://i.ibb.co/n801LRjf/IMG-4800.jpg" alt="IMG-4800">
+    <img src="https://i.ibb.co/zV8r6BDC/IMG-4795.jpg" data-full="https://i.ibb.co/zV8r6BDC/IMG-4795.jpg" alt="IMG-4795">
+    <img src="https://i.ibb.co/PsDyBvpT/IMG-4797.jpg" data-full="https://i.ibb.co/PsDyBvpT/IMG-4797.jpg" alt="IMG-4797">
+    <img src="https://i.ibb.co/Nd2yqXmf/IMG-4792.jpg" data-full="https://i.ibb.co/Nd2yqXmf/IMG-4792.jpg" alt="IMG-4792">
   </div>
 </section>
 
@@ -258,10 +288,13 @@
 </div>
 
 <style>
+/* Postojeći CSS ostaje nepromenjen */
 #brvnaraGalleryWrapper * { box-sizing: border-box; }
-#brvnaraGalleryGrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px,1fr)); gap:10px; }
-#brvnaraGalleryGrid img { width:100%; height:140px; object-fit:cover; border-radius:6px; cursor:pointer; transition:transform .2s; }
-#brvnaraGalleryGrid img:hover { transform:scale(1.03); }
+#brvnaraGalleryWrapper h4 { margin-top:25px; color:#333; font-size:1.2em; }
+.brvnaraGalleryGrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px,1fr)); gap:10px; }
+.brvnaraGalleryGrid img { width:100%; height:140px; object-fit:cover; border-radius:6px; cursor:pointer; transition:transform .2s; }
+.brvnaraGalleryGrid img:hover { transform:scale(1.03); }
+
 #brvnaraLightbox { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85); z-index:999999999; justify-content:center; align-items:center; flex-direction:column; padding:10px; }
 #brvnaraLightbox img { max-width:95vw; max-height:80vh; border-radius:8px; }
 #brvnaraCloseBtn { position:absolute; top:10px; right:15px; font-size:35px; color:#fff; cursor:pointer; }
@@ -270,11 +303,20 @@
 #brvnaraPreviewRow { display:flex; overflow-x:auto; gap:6px; margin-top:15px; padding-bottom:10px; width:100%; }
 #brvnaraPreviewRow img { width:70px; height:70px; object-fit:cover; border-radius:4px; opacity:.6; cursor:pointer; flex-shrink:0; }
 #brvnaraPreviewRow img.active { opacity:1; border:2px solid white; }
-@media(max-width:600px){#brvnaraGalleryGrid{grid-template-columns:repeat(auto-fill,minmax(120px,1fr));}#brvnaraPreviewRow img{width:55px;height:55px;}.brvnaraArrow{font-size:35px;}}
+
+.brvnaraTabBtn { padding:8px 16px; margin:0 5px; cursor:pointer; border:none; border-radius:6px; background:#ccc; color:#000; font-weight:bold; transition:background .2s; }
+.brvnaraTabBtn.active { background:#f3a712; color:#fff; }
+
+@media(max-width:600px){
+  .brvnaraGalleryGrid{grid-template-columns:repeat(auto-fill,minmax(120px,1fr));}
+  #brvnaraPreviewRow img{width:55px;height:55px;}
+  .brvnaraArrow{font-size:35px;}
+}
 </style>
 
 <script>
-const grid=document.querySelectorAll("#brvnaraGalleryGrid img");
+// Lightbox funkcionalnost ostaje identična
+const grids=document.querySelectorAll(".brvnaraGalleryGrid");
 const lightbox=document.getElementById("brvnaraLightbox");
 const lightImg=document.getElementById("brvnaraLightImg");
 const previewRow=document.getElementById("brvnaraPreviewRow");
@@ -283,13 +325,53 @@ const nextBtn=document.getElementById("brvnaraNext");
 const prevBtn=document.getElementById("brvnaraPrev");
 let current=0;
 let images=[];
-grid.forEach((img,i)=>{images.push(img.dataset.full); img.addEventListener("click",()=>{current=i; showImage(); lightbox.style.display="flex";});});
-function showImage(){lightImg.src=images[current]; previewRow.innerHTML=""; images.forEach((src,i)=>{const p=document.createElement("img");p.src=src;if(i===current)p.classList.add("active");p.addEventListener("click",()=>{current=i;showImage();}); previewRow.appendChild(p);});}
-closeBtn.onclick=()=>lightbox.style.display="none";
-nextBtn.onclick=()=>{current=(current+1)%images.length; showImage();};
-prevBtn.onclick=()=>{current=(current-1+images.length)%images.length; showImage();};
-window.onkeydown=e=>{if(e.key==="Escape")lightbox.style.display="none"; if(e.key==="ArrowRight") nextBtn.onclick(); if(e.key==="ArrowLeft") prevBtn.onclick();};
-lightbox.addEventListener("click",e=>{if(e.target===lightbox) lightbox.style.display="none";});
+
+// Klik na slike unutar svakog albuma
+grids.forEach(grid=>{
+  const imgs = grid.querySelectorAll("img");
+  imgs.forEach((img,i)=>{
+    img.addEventListener("click",()=>{
+      // Postavi slike samo iz ovog albuma
+      images = Array.from(imgs).map(im=>im.dataset.full);
+      current = i;
+      showImage();
+      lightbox.style.display="flex";
+    });
+  });
+});
+
+function showImage(){
+  lightImg.src = images[current];
+  previewRow.innerHTML = "";
+  images.forEach((src,i)=>{
+    const p = document.createElement("img");
+    p.src = src;
+    if(i===current) p.classList.add("active");
+    p.addEventListener("click",()=>{ current=i; showImage(); });
+    previewRow.appendChild(p);
+  });
+}
+
+// Tab funkcionalnost
+const tabBtns=document.querySelectorAll(".brvnaraTabBtn");
+tabBtns.forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    tabBtns.forEach(b=>b.classList.remove("active"));
+    btn.classList.add("active");
+    const album = btn.dataset.album;
+    grids.forEach(grid=>{ grid.style.display = (grid.dataset.album===album) ? "grid" : "none"; });
+  });
+});
+
+closeBtn.onclick = ()=> lightbox.style.display="none";
+nextBtn.onclick = ()=>{ current=(current+1)%images.length; showImage(); };
+prevBtn.onclick = ()=>{ current=(current-1+images.length)%images.length; showImage(); };
+window.onkeydown = e=>{
+  if(e.key==="Escape") lightbox.style.display="none";
+  if(e.key==="ArrowRight") nextBtn.onclick();
+  if(e.key==="ArrowLeft") prevBtn.onclick();
+};
+lightbox.addEventListener("click", e=>{ if(e.target===lightbox) lightbox.style.display="none"; });
 </script>
 <section id="cene">
   <h3>Okvirne cene</h3>
