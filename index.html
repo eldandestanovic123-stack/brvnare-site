@@ -488,7 +488,6 @@
 </div>
 
 <style>
-/* Postojeći CSS ostaje nepromenjen */
 #brvnaraGalleryWrapper * { box-sizing: border-box; }
 #brvnaraGalleryWrapper h4 { margin-top:25px; color:#333; font-size:1.2em; }
 .brvnaraGalleryGrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px,1fr)); gap:10px; }
@@ -504,8 +503,24 @@
 #brvnaraPreviewRow img { width:70px; height:70px; object-fit:cover; border-radius:4px; opacity:.6; cursor:pointer; flex-shrink:0; }
 #brvnaraPreviewRow img.active { opacity:1; border:2px solid white; }
 
-.brvnaraTabBtn { padding:8px 16px; margin:0 5px; cursor:pointer; border:none; border-radius:6px; background:#ccc; color:#000; font-weight:bold; transition:background .2s; }
-.brvnaraTabBtn.active { background:#f3a712; color:#fff; }
+/* 🔥 VEĆA DUGMAD — JEDINA IZMJENA */
+.brvnaraTabBtn {
+  padding:12px 22px;
+  margin:0 5px;
+  cursor:pointer;
+  border:none;
+  border-radius:8px;
+  background:#ccc;
+  color:#000;
+  font-weight:bold;
+  font-size:16px;
+  transition:background .2s;
+}
+
+.brvnaraTabBtn.active {
+  background:#f3a712;
+  color:#fff;
+}
 
 @media(max-width:600px){
   .brvnaraGalleryGrid{grid-template-columns:repeat(auto-fill,minmax(120px,1fr));}
@@ -515,7 +530,6 @@
 </style>
 
 <script>
-// Lightbox funkcionalnost ostaje identična
 const grids=document.querySelectorAll(".brvnaraGalleryGrid");
 const lightbox=document.getElementById("brvnaraLightbox");
 const lightImg=document.getElementById("brvnaraLightImg");
@@ -526,12 +540,10 @@ const prevBtn=document.getElementById("brvnaraPrev");
 let current=0;
 let images=[];
 
-// Klik na slike unutar svakog albuma
 grids.forEach(grid=>{
   const imgs = grid.querySelectorAll("img");
   imgs.forEach((img,i)=>{
     img.addEventListener("click",()=>{
-      // Postavi slike samo iz ovog albuma
       images = Array.from(imgs).map(im=>im.dataset.full);
       current = i;
       showImage();
@@ -552,7 +564,6 @@ function showImage(){
   });
 }
 
-// Tab funkcionalnost
 const tabBtns=document.querySelectorAll(".brvnaraTabBtn");
 tabBtns.forEach(btn=>{
   btn.addEventListener("click",()=>{
