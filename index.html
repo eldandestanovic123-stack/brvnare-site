@@ -39,12 +39,96 @@
     </p>
   </div>
 </header>
-<section id="hero">
-  <h2>Izgradnja brvnara po meri — od temelja do krova</h2>
-  <p>Moderne i tradicionalne brvnare za porodični odmor ili izdavanje. Cena od <strong>290 do 310 €/m²</strong>.</p>
-  <a href="#kontakt" class="button">Zatraži besplatnu procenu</a>
-  <a href="https://wa.me/38162406649?text=Zelim%20procenu%20za%20brvnaru" class="button outline" target="_blank">Pošalji WhatsApp</a>
-  <img src="https://images.unsplash.com/photo-1601758123927-1e61e2c5b6b0?auto=format&fit=crop&w=800&q=80" alt="Brvnara po meri">
+<section id="hero" style="
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+  overflow: hidden;
+  border-radius: 15px;
+">
+
+  <!-- Pozadinska slika -->
+  <img src="https://images.unsplash.com/photo-1601758123927-1e61e2c5b6b0?auto=format&fit=crop&w=1600&q=80"
+       alt="Brvnara po meri"
+       style="
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+         z-index: -3;
+         filter: brightness(60%);
+       ">
+
+  <!-- Overlay -->
+  <div style="
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6));
+    z-index: -2;
+  "></div>
+
+  <!-- Sadržaj -->
+  <div style="max-width: 650px; color: #fff; z-index: 5;">
+    <h2 style="
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+    ">
+      Izgradnja brvnara po meri — od temelja do krova
+    </h2>
+
+    <p style="
+      font-size: 1.2rem;
+      margin-bottom: 25px;
+      line-height: 1.5;
+    ">
+      Moderne i tradicionalne brvnare za porodični odmor ili izdavanje.  
+      Cena od <strong>290 do 310 €/m²</strong>.
+    </p>
+
+    <!-- Dugmad -->
+    <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+      <!-- Glavno dugme -->
+      <a href="#kontakt" style="
+        padding: 12px 28px;
+        background: #f3a712;
+        color: #000;
+        border-radius: 8px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: 0.25s;
+      " onmouseover="this.style.background='#d88f0d'" onmouseout="this.style.background='#f3a712'">
+        Zatraži besplatnu procenu
+      </a>
+
+      <!-- WhatsApp dugme -->
+      <a href="https://wa.me/38162406649?text=Zelim%20procenu%20za%20brvnaru"
+         target="_blank"
+         style="
+           padding: 12px 28px;
+           background: transparent;
+           border: 2px solid #fff;
+           color: #fff;
+           border-radius: 8px;
+           font-weight: 600;
+           text-decoration: none;
+           transition: 0.25s;
+         "
+         onmouseover="this.style.background='rgba(255,255,255,0.2)'"
+         onmouseout="this.style.background='transparent'">
+        Pošalji WhatsApp
+      </a>
+    </div>
+  </div>
+
 </section>
  <section id="usluge" style="position: relative; overflow: hidden; color: #fff; padding: 40px; z-index: 1; font-family: Arial, sans-serif;">
   <!-- Pozadinska slika sa blur efektom i overlay -->
